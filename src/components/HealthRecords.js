@@ -27,14 +27,8 @@ class HealthRecords extends Component{
   }
   
   componentDidMount() {
-    axios.get('http://localhost:3030/health_records.json')
-    .then(response => {
-        console.log(response)
-        this.setState({
-            list: response.data
-        })
-    })
-    .catch(error => console.log(error))
+    var data = require('../health_data.json');
+    this.setState({ list: data })
   }
 
   render() {
